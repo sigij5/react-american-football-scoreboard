@@ -8,12 +8,11 @@ function App(props) {
   const [homeScore, setHomeScore] = useState(0);
   const [awayScore, setAwayScore] = useState(0);
   const homeName = props.homeTeam;
-  const awayName = props.awayTeam
-  const [time, setTime] = useState('0:00')
-  function timer(){
-    setTime(time +1)
-    return time
-  }
+  const awayName = props.awayTeam;
+  const [time, setTime] = useState('0:00');
+  const [homePasses, setHomePasses] = useState(0)
+  const [awayPasses, setAwayPasses] = useState(0)
+
   return (
     
     <div className="container">
@@ -40,16 +39,26 @@ function App(props) {
 
           {/* TODO STEP 4 - Now we need to attach our state setter functions to click listeners. */}
           <button onClick={()=>{setHomeScore(homeScore + 1)}} className="homeButtons__touchdown">Home Goal</button>
-          <button onClick={()=>{setHomeScore(homeScore + 3)}} className="homeButtons__fieldGoal">Home Field Goal</button>
+          <button onClick={()=>{setHomePasses(homePasses + 1)}} className="homeButtons__fieldGoal">Home Field Goal</button>
         </div>
         <div className="awayButtons">
           <button onClick={()=>{setAwayScore(awayScore + 1)}} className="awayButtons__touchdown">Away Goal</button>
-          <button onClick={()=>{setAwayScore(awayScore + 3)}} className="awayButtons__fieldGoal">Away Field Goal</button>
+          <button onClick={()=>{setAwayPasses(awayPasses + 1)}} className="awayButtons__fieldGoal">Away Field Goal</button>
         </div>
-      </section>
+      </section>(
     </div>
   );
 }
+
+// function score(team, points){
+//   const [homeScore, setHomeScore] = useState(0);
+//   const [awayScore, setAwayScore] = useState(0);
+
+//   if(team === 'home'){
+//    setHomeScore(homeScore + points)
+//   }else setAwayScore(awayScore + points)
+
+// }
 
 // function TopRow(props){
 

@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import "./App.css";
 
 const BottomRow = () => {
-  const [passes, setPasses] = useState(0)
+  const [homePasses, setHomePasses] = useState(0)
+  const [awayPasses, setAwayPasses] = useState(0)
 
 
   return (
@@ -13,11 +14,11 @@ const BottomRow = () => {
       </div>
       <div className="toGo">
         <h3 className="toGo__title">Passes</h3>
-        <div className="toGo__value">{passes}</div>
+        <div className="toGo__value">{homePasses}</div>
       </div>
       <div className="ballOn">
         <h3 className="ballOn__title">Passes</h3>
-        <div className="ballOn__value">21</div>
+        <div className="ballOn__value">{awayPasses}</div>
       </div>
       <div className="quarter">
         <h3 className="quarter__title">Pass %</h3>
